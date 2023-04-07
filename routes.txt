@@ -1,0 +1,14 @@
+api/coffee
+get -> get all coffee
+get/:id -> get coffee by id
+post/ create coffee
+update/:id -> update coffee details
+
+
+api/coffee-rating
+get -> get all coffeeratings
+get/:id -> get coffeeratings by id
+post -> create coffee-rating
+update/:id -> update rating
+
+api/user
