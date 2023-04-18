@@ -1,51 +1,38 @@
 <template>
-    <div>
-        <Header title="coffee" />
+  <div>
+    <Header title="coffee" />
 
-        <h1>coffee</h1>
+    <h1>coffee</h1>
 
-        <ul v-infinite-scroll="load" class="infinite-list override" style="overflow: auto">
-            <li v-for="i in count" :key="i" class="infinite-list-item">{{ i }}</li>
-        </ul>
-    </div>
+    <el-col v-for="coffee in coffeeArray" :key="coffee.id">
+      <el-row>
+        <h1>{{ coffee.name }}</h1>
+        <p>
+          <span>{{ coffee.beanType }}</span
+          >{{ coffee.description }}
+        </p>
+      </el-row>
+    </el-col>
+  </div>
 </template>
-<script>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+<script setup>
+import API from '../api'
 import Header from '../components/Header.vue'
+import { ref } from 'vue'
 
-export default {
-    components: {
-        Header
-    },
-    data() {
-        return {
-            count: 0,
-        }
-    },
-    methods: {
-        load() {
-            this.count += 2
-        }
-    }
+const coffeeArray = ref([])
+
+const fetchCoffee = async () => {
+  const res = await API.getCoffee()
+  coffeeArray.value = res
+  console.log(coffeeArray.value)
 }
+fetchCoffee()
 </script>
-<style>
-.infinite-list {
-    height: 600px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
 
-.infinite-list .infinite-list-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
-    margin: 10px;
-}
-
-.infinite-list .infinite-list-item+.list-item {
-    margin-top: 10px;
-}
-</style>
+<style></style>

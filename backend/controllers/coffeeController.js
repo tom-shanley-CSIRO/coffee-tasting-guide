@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 const getCoffee = async (req, res) => {
   try {
     const data = await prisma.coffee.findMany();
-    res.status(200).json({ message: data });
+    res.status(200).json(data);
   } catch (err) {
     res.status(400).json({ message: err });
   }
