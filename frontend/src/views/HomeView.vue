@@ -1,9 +1,8 @@
 <script setup>
 import { Document } from '@element-plus/icons-vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const route = useRoute()
 
 function pushCoffee() {
   router.push('/coffee')
@@ -18,7 +17,7 @@ function pushLog() {
     <h1 id="title">coffee.log( )</h1>
     <el-row class="menu-buttons">
       <el-button style="height: 4em; width: 4em" color="rgb(217, 217, 217)" @click="pushCoffee">
-        <img src="../assets/coffee-bean-icon.svg" alt="Coffee Bean" class="button-icon" />
+        <img src="../assets/coffee-medium.svg" alt="Coffee Bean" class="button-icon" />
       </el-button>
       <el-button
         style="height: 4em; width: 4em"
