@@ -19,6 +19,8 @@ import { RouterView } from 'vue-router'
 
   background-color: var(--main-bg-color);
   color: var(--text-color);
+
+  --el-slider-main-bg-color: green;
 }
 body {
   font-family: 'Comfortaa', cursive;
