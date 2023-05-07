@@ -32,7 +32,7 @@
                 />
             </div>
             <el-slider
-                v-model="quantity"
+                v-model="quality"
                 :step="0.5"
                 @change="$emit('qualityChanged', quality)"
                 :min="0"
