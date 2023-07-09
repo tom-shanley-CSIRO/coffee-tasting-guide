@@ -5,34 +5,14 @@
     <div class="log-view">
         <el-form :model="form">
             <el-row class="row-log">
-                <baseForm
-                    class="log-item"
-                    label="Aroma"
-                    @quantity-changed="(n) => (form.aroma_quantity = n)"
-                ></baseForm>
-                <baseForm
-                    class="log-item"
-                    label="Acidity"
-                    @changed="(n) => (form.aroma_quantity = n)"
-                ></baseForm>
-                <baseForm
-                    class="log-item"
-                    label="Sweetness"
-                    @changed="(n) => (form.aroma_quantity = n)"
-                ></baseForm>
-                <baseForm
-                    class="log-item"
-                    label="Body"
-                    @changed="(n) => (form.aroma_quantity = n)"
-                ></baseForm>
-                <baseForm
-                    class="log-item"
-                    label="Finish"
-                    @changed="(n) => (form.aroma_quantity = n)"
-                ></baseForm>
+                <baseForm class="log-item" label="Aroma" @quantity-changed="(n) => (form.aroma_quantity = n)"></baseForm>
+                <baseForm class="log-item" label="Acidity" @changed="(n) => (form.aroma_quantity = n)"></baseForm>
+                <baseForm class="log-item" label="Sweetness" @changed="(n) => (form.aroma_quantity = n)"></baseForm>
+                <baseForm class="log-item" label="Body" @changed="(n) => (form.aroma_quantity = n)"></baseForm>
+                <baseForm class="log-item" label="Finish" @changed="(n) => (form.aroma_quantity = n)"></baseForm>
             </el-row>
             <label for="overallRating">
-                <input type="text" class="overall-rating" v-model="" />
+                <!-- <input type="text" class="overall-rating" v-model="" /> -->
             </label>
         </el-form>
     </div>
@@ -55,9 +35,11 @@ function handleEvent() {
     width: 70%;
     display: flex;
 }
+
 .log-item {
     width: 18%;
 }
+
 .row-log {
     width: 100%;
 }
